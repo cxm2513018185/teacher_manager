@@ -1,0 +1,14 @@
+// 配置路由规则
+import { Router, Route, NavLink, Switch, Redirect } from 'dva/router';
+import React, { Component, Fragment } from 'react';
+import Home from '../components/Home';
+
+export default function ({ history, app }) {
+    return (
+        <Router history={history}>
+            <Fragment>
+                <Route path="/home" exact component={Home} />
+            </Fragment>
+        </Router>
+    )
+}
