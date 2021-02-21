@@ -4,8 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import router from './routers';
-import modelIndex from './models';
+import indexModel from './models';
+import teacherModel from './models/teacher';
 import { createBrowserHistory as createHistory } from 'history';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.css';
+import './assets/css/index.css';
 
 // 1. 引入dva
 import dva from 'dva';
@@ -17,7 +21,8 @@ let app = new dva({
 app.router(router);
 // 4. app.use()安装插件
 // 5. 注册模块app.model({});    {state,effects,reducers}
-app.model(modelIndex);
+app.model(indexModel);
+app.model(teacherModel);
 // 5.5 卸载模块 app.unmodel()
 // 6. app.start('#root')
 app.start('#root');
